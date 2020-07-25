@@ -20,3 +20,19 @@ function buyCake() {
 // an action is an object with a type property an action creator is a function that returns an action
 
 
+// Implementing Reducers
+// (prevState, action) => newState
+
+const initialState = {
+    numOfCakes: 10
+}
+
+const reducer = (state=initialState, action) => {
+    switch(action.type){
+        case BUY_CAKE: return {
+            ...state,//(first make a copy of state object and then only update number of cakes)
+            numOfCakes: state.numOfCakes - 1
+        }
+        default: return state
+    }
+}
