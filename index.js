@@ -1,3 +1,6 @@
+// import redux from 'redux';
+const redux = require('redux');
+const createStore = redux.createStore //created store
 
 // first we define a string constant that indicates the type of the action
 const BUY_CAKE = 'BUY_CAKE'
@@ -36,3 +39,19 @@ const reducer = (state=initialState, action) => {
         default: return state
     }
 }
+
+// implementing store(see notes)
+// first responsibilty holding the application state
+const store = createStore(reducer)
+// second responsibility called getState which gives the current state in the store
+console.log('Initial state', store.getState())
+// fourth responsibilty to allow the app to subscibe the changes in the store that is acheived using subscribe method
+const unsubscribe = store.subscribe(() => console.log('Update state', store.getState()))
+// third responsibility the store provides a dispatch method to update the state.
+store.dispatch(buyCake())
+store.dispatch(buyCake())
+store.dispatch(buyCake())
+
+// final part is to unsubscribe from the store by calling the function returned by the SUBSCRIBE METHOD
+unsubscribe()
+
