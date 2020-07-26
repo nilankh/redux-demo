@@ -1,4 +1,4 @@
-// import redux from 'redux';
+// import redux from 'redux';if this react application then only
 const redux = require('redux');
 const createStore = redux.createStore //created store
 
@@ -40,7 +40,7 @@ const reducer = (state=initialState, action) => {
     }
 }
 
-// implementing store(see notes)
+// implementing redux store(see notes)
 // first responsibilty holding the application state
 const store = createStore(reducer)
 // second responsibility called getState which gives the current state in the store
