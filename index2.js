@@ -1,4 +1,4 @@
-// Learning about multiple reducers
+// Learning about 1st way multiple reducers
 const redux = require('redux');
 const createStore = redux.createStore //created store
 
