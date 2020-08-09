@@ -4,16 +4,19 @@ const applyMiddleware = redux.applyMiddleware
 const thunkMiddleware = require('redux-thunk').default
 const axios = require('axios');
 
+// state
 const initialState = {
     loading: false,
     users: [],
     error: ''
 }
 
+// actions
 const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST'
 const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
 const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
 
+// action creator
 const fetchUsersRequest = () => {
    return {
        type: FETCH_USERS_REQUEST
@@ -34,6 +37,7 @@ const fetchUsersFailure = error => {
    }
 }
 
+// reducer
 const reducer = (state = initialState, action) => {
    switch(action.type){
        case FETCH_USERS_REQUEST:
