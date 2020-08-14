@@ -44,6 +44,7 @@ const reducer = (state = initialState, action) => {
            return {
                ...state,
                loading: true
+            //    yahan pe pure state ko copy kia h or sirf loading ko true set kr rhe h
            }
        case FETCH_USERS_SUCCESS:
            return {
